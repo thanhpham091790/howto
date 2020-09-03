@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menus - Icon Bar</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html {
+            font-size: 0.625rem;
+        }
+
+        p {
+            font-size: 1.6rem;
+        }
+
+        #menu-icon {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        #menu-icon .bar {
+            width: 3rem;
+            height: 0.5rem;
+            margin: 0.5rem;
+            background-color: black;
+            transition: 0.4s;
+        }
+
+        #menu-icon.change .bar1 {
+            -webkit-transform: translate(0, 200%) rotate(-45deg);
+            transform: translate(0, 200%) rotate(-45deg);
+        }
+
+        #menu-icon.change .bar2 {
+            opacity: 0;
+        }
+
+        #menu-icon.change .bar3 {
+            -webkit-transform: translate(0, -200%) rotate(45deg);
+            transform: translate(0, -200%) rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <p>A menu icon:</p>
+    <div id="menu-icon" onclick="myFunction(this)">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+    </div>
+
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
+    </script>
+</body>
+
+</html>
