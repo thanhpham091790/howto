@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menus - Icon Bar</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 0.625rem;
+        }
+        body, html{
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        p {
+            font-size: 1.6rem;
+        }
+
+        .tablinks{
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 1.4rem 1.6rem;
+            font-size: 1.7rem;
+            width: 25%;
+        }
+        .tablinks:hover{
+            background-color: #777;
+        }
+        .tabcontent{
+            color:white;
+            padding: 10rem 2rem;
+            height: 100%;
+            display: none;
+        }
+        #home{background-color: red;}
+        #news{background-color: green;}
+        #contact{background-color: lightblue;}
+        #about{background-color: orange;}
+    </style>
+</head>
+
+<body>
+    <button class="tablinks" id="home-link" onclick="openPage('home',this,'red')">Home</button>
+    <button class="tablinks" id="news-link" onclick="openPage('news',this,'green')">News</button>
+    <button class="tablinks" id="contact-link" onclick="openPage('contact',this,'lightblue')">Contact</button>
+    <button class="tablinks" id="about-link" onclick="openPage('about',this,'orange')">About</button>
+
+    <div id="home" class="tabcontent">
+        <h3>Home</h3>
+        <p>Home is where the heart is ..</p>
+    </div>
+    <div id="news" class="tabcontent">
+        <h3>News</h3>
+        <p>Some news this fine day!</p>
+    </div>
+    <div id="contact" class="tabcontent">
+        <h3>Contact</h3>
+        <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
+    <div id="about" class="tabcontent">
+        <h3>About</h3>
+        <p>Who we are and what we do.</p>
+    </div>
+   <script>
+       function openPage(tabId,element,color){
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for(i=0;i<tabcontent.length;i++){
+                tabcontent[i].style.display="none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for(i=0;i<tablinks.length;i++){
+                tablinks[i].style.backgroundColor="";
+            }
+            document.getElementById(tabId).style.display = "block";
+            element.style.backgroundColor = color;
+       }
+       // Get the element with id='home-link' and click on it
+       document.getElementById("home-link").click();
+   </script>
+</body>
+
+</html>
